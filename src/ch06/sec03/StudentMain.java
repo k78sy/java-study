@@ -1,4 +1,4 @@
-package ch05.sec06;
+package ch06.sec03;
 
 //p.214
 public class StudentMain { // main메소드를 가지기 위한 클래스를 만들었음

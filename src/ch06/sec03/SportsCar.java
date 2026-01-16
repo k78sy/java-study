@@ -1,4 +1,4 @@
-package ch05.sec06;
+package ch06.sec03;
 // 자바 파일 하나에 class 하나가 원래 규칙
 /*
 접근지시어: public protected default private
