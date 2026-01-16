@@ -16,6 +16,10 @@ public class ArrayRandom {
         int[] arr2 = new int[9];
         for(int i=0;i<arr2.length;i++){ //값 대입 담당
             arr2[i] = (int)((Math.random() * 9.0) + 1);
+
+            // i=0  0<0=안쪽 for문 돌아가지않음
+            // i=1 k=0
+
             for(int k=0; k<i; k++){ //중복 확인 담당
                 if(arr2[k] == arr2[i]){
                     i--;
