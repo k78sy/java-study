@@ -1,6 +1,6 @@
 package ch05.sec03;
 
-public class stringMethod2 {
+public class StringMethod2 {
     public static void main(String[] args){
         // 문자열 자르기 substring 메소드 이용 방법 두가지가 있음
         // 첫번째: 아규먼트 1개(정수) 이용. 정수(index) 문자부터 마지막 방번호까지 문자열을 잘라낸다.
@@ -38,6 +38,12 @@ public class stringMethod2 {
             System.out.println("ssn에 88이 있음!");
         }else{
             System.out.println("ssn에 88이 없음!");
+        }
+
+        String board ="번호,제목,내용,성명"; // ,기준으로 값을 쪼개서 배열 만들기
+        String[] arr = board.split(","); // 스트링배열 리턴 스트링배열객체의 주소값이 있음.
+        for(int i=0; i<arr.length; i++){
+            System.out.printf("arr[%d]: %s\n", i, arr[i]);
         }
     }
 }

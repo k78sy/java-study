@@ -9,5 +9,7 @@ public class Mission01 {
         //System.out.println("idx: " + idx);
         String file = fileNm.substring(idx + 1);
         System.out.println(file);
+
+
     }
 }
