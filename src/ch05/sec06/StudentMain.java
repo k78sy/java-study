@@ -17,6 +17,7 @@ public class StudentMain { // main메소드를 가지기 위한 클래스를 만
         // 객체 생성때만 호출할 수 있고, 생성 이후에는 호출할 수 없는 메소드
         // 객체 생성할 때는 무조건 생성자를 호출해야합니다.
         // 생성자를 정의하지 않으면 컴파일러가 기본 생성자는 자동으로 만들어 준다.
+        // 아무 파라미터를 안받는 거: 기본 생성자
 
         // 변수는 크게 두 타입. 프라머티브 타입(8개밖에 없으니까), 레퍼러스 타입 중 레퍼런스 타입
         // 소문자로 시작하지 않는건 레퍼런스 타입
@@ -30,5 +31,11 @@ public class StudentMain { // main메소드를 가지기 위한 클래스를 만
         s2.no = 12;
         s2.name = "임준이";
         s2.introduceMySelf();
+
+        Student s3 = new Student(100, "이름");
+        s3.introduceMySelf();
+
+        Student s4 = s1;
+        s4.introduceMySelf();
     }
 }
