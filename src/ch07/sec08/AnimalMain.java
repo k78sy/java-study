@@ -21,8 +21,8 @@ public class AnimalMain {
         dog.crying();
 
         //2. 대전제 2
-//        Dog dog 2 = new Animal(); // 컴파일 에러 뜬다.
-        //Dog dog2 = (Dog)(New Animal()) // 강제 형변환 해도 안된다. 2번 위반!
+//        Dog dog2 = new Animal(); // 컴파일 에러 뜬다.
+//        Dog dog2 = (Dog)(New Animal()) // 강제 형변환 해도 안된다. 2번 위반!
 
        // animal변수레는 Dog 객체 주소값이 담겨져 있기때문에  Dog 타입 변수에 주소값 담을 수 있다.
         Dog dog3 = (Dog)animal; // 객체 주소값만 따지만 맞지만, 부모타입이라 자동형변환 안해줘서 뜨는 오류
