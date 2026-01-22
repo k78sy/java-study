@@ -15,10 +15,10 @@ public class CardDeck {
     public CardDeck(){
         init(); // 내부에서만 사용하는 메소드로 따로 뺌
         shuffle();
-        for(int i=0; i<cards.length; i++){
-            Card c = cards[i];
-            System.out.printf("%s - %s\n", c.getPattern(), c.getDenomination());
-        }
+//        for(int i=0; i<cards.length; i++){
+//            Card c = cards[i];
+//            System.out.printf("%s - %s\n", c.getPattern(), c.getDenomination());
+//        }
     }
 
     public void print(){ // 검증용
@@ -85,7 +85,7 @@ public class CardDeck {
         Card temp = cards[drawIdx];
         cards[drawIdx++] = null;
 
-        System.out.printf("뽑은카드: %s - %s\n", temp.getPattern(), temp.getDenomination());
+//        System.out.printf("뽑은카드: %s - %s\n", temp.getPattern(), temp.getDenomination());
         return temp;
     }
 }

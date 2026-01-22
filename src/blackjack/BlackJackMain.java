@@ -1,6 +1,7 @@
 package blackjack;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class BlackJackMain {
     public static void main(String[] args){
@@ -8,24 +9,59 @@ public class BlackJackMain {
         Gamer gamer = new Gamer();
         Dealer dealer = new Dealer();
 
-        System.out.println("------------------");
-        gamer.receiveCard(cd.draw());
-        System.out.println("------------------");
-        gamer.receiveCard(cd.draw());
-        System.out.println("------------------");
+        //딜러와 게이머는 순차적으로 카드를 하나씩 뽑아
+        // 각자 2개의 카드를 소지한다.
 
-        System.out.println("------------------");
-        dealer.receiveCard(cd.draw());
-        System.out.println("------------------");
-        dealer.receiveCard(cd.draw());
-        System.out.println("------------------");
+        for(int i=0; i<2; i++) {
+            gamer.receiveCard(cd.draw());
+            dealer.receiveCard(cd.draw());
+        }
+        // 딜러가 가지고 있는 카드의 점수가 16점 이하면
+        // 카드 한장을 더 소지하게 한다.
+        if(dealer.needMoreCard()){
+            dealer.receiveCard(cd.draw());
+        }
 
-        Card[] gamerCards = gamer.openCard();
-        System.out.println("게이머 받은 카드들 : " + Arrays.toString(gamerCards)); // 검증용
+//        for(int i=0; i<gamer.openCard().length;i++){
+//            Card c = gamer.openCard()[i];
+//        }
 
-        Card[] dealerCards = dealer.openCard();
-        System.out.println("딜러 받은 카드들 : " + Arrays.toString(dealerCards)); // 검증용
+        Scanner scanner = new Scanner(System.in);
 
-        dealer.needMoreCard();
+//        while (true) {
+//            // 무한 반복문
+//            System.out.print("카드를 더 뽑으시겠습니까? y/n: ");
+//            String moreCard = scanner.nextLine();
+//
+//            if (moreCard.equals("n")) {
+//                break;
+//            } else if (moreCard.equals("y")) {
+//                gamer.receiveCard(cd.draw());
+//                gamer.showYourCards();
+//                System.out.println("현재 점수: " + Rule.calcScore(gamer.openCard()));
+//            }
+//        }
+
+        dealer.showOneCards();
+
+        while(true){
+            //게이머에게 카드를 더 받을 지 물어본다.
+            gamer.showYourCards();
+            System.out.print("카드를 더 받으시겠습니까? (y/n): ");
+            String answer = scanner.next();
+            if("n".equalsIgnoreCase(answer)){ //equalsIgnoreCase() 대소문자 무시
+                break;
+            }else if(!"y".equalsIgnoreCase(answer)){
+                continue;
+            }
+            gamer.receiveCard(cd.draw());
+            if(Rule.calcScore(gamer.openCard()) > 21){
+                break;
+            }
+        }
+
+        dealer.showYourCards();
+
+        Rule.whoIsWinner(dealer, gamer);
     }
 }
