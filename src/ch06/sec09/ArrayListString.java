@@ -102,4 +102,31 @@ public class ArrayListString {
             }
         }
     }
+//    @Override
+//    public String toString(){
+//        String temp = "";
+//
+//        for(int i=0; i<arr.length;i++){
+//            if(i==0){
+//                temp = arr[i];
+//            }else{
+//                temp += "," + arr[i];
+//            }
+//        }
+//
+//        return "[" + temp + "]";
+//    }
+
+    @Override
+    public String toString(){
+        if(arr.length == 0 ){return "[]"; }
+        String temp = arr[0];
+        for(int i=1; i<arr.length;i++){
+            temp += "," + arr[i];
+        }
+        return "[" + temp + "]";
+    }
+
 }
+
+
