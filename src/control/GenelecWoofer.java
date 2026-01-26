@@ -1,6 +1,6 @@
 package control;
 
-public class GenerecWoofer implements Woofer{
+public class GenelecWoofer implements Woofer{
 
     @Override
     public void baseSound() {

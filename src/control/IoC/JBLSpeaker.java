@@ -1,15 +1,13 @@
-package control.IoC.legacy;
+package control.IoC;
 
-import control.MartenWoofer;
 import control.Speaker;
 import control.Woofer;
 
 public class JBLSpeaker implements Speaker {
     private Woofer woofer;
 
-    public JBLSpeaker(){
-//        woofer = new GenerecWoofer();
-        woofer = new MartenWoofer();
+    public JBLSpeaker(Woofer woofer){
+        this.woofer = woofer;
     }
 
     @Override

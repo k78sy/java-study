@@ -1,4 +1,4 @@
-package control.IoC.legacy;
+package control.IoC;
 
 import control.Speaker;
 import control.Tv;
@@ -7,9 +7,8 @@ public class SamsungTv implements Tv {
 
     private Speaker speaker;
 
-    public SamsungTv(){
-//        speaker = new HarmanSpeaker();
-        speaker = new JBLSpeaker();
+    public SamsungTv(Speaker speaker){
+        this.speaker = speaker;
     }
 
     @Override

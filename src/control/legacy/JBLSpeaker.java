@@ -1,6 +1,5 @@
 package control.legacy;
 
-import control.GenerecWoofer;
 import control.MartenWoofer;
 import control.Speaker;
 import control.Woofer;
